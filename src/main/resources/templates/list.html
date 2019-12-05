@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        th, td {
+            border: 1px solid black;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/my.css}">
+</head>
+<body>
+<div>
+    <table id="table" style="width:100%">
+        <tr>
+            <th>Artist name</th>
+            <th>Id</th>
+        </tr>
+        <tr>
+            <td>Use search option</td>
+            <td>to find your favourite artist!</td>
+        </tr>
+    </table>
+    <input type="text" id="test"  />
+    <input type="button" name="test" class="btn btn-info"
+           onclick="populateTableWithArtists();"
+           value="Search"></br>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" th:src="@{js/script.js}"></script>
+</html>

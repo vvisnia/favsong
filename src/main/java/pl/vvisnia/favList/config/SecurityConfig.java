@@ -1,4 +1,4 @@
-package pl.vvisnia.favList.configuration;
+package pl.vvisnia.favList.config;
 
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.context.annotation.Configuration;
@@ -12,7 +12,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception{
-        http.authorizeRequests().antMatchers("**").authenticated();
+        http.cors().and().authorizeRequests().antMatchers("/", "/resources/**", "/static/**", "/js/**").permitAll()
+                .antMatchers("/**", "**/**", "**").hasRole("USER").and().csrf().disable();
     }
 
 }

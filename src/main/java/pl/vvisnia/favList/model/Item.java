@@ -4,6 +4,7 @@ package pl.vvisnia.favList.model;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -13,16 +14,16 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "external_urls",
-    "followers",
-    "genres",
-    "href",
-    "id",
-    "images",
-    "name",
-    "popularity",
-    "type",
-    "uri"
+        "external_urls",
+        "followers",
+        "genres",
+        "href",
+        "id",
+        "images",
+        "name",
+        "popularity",
+        "type",
+        "uri"
 })
 public class Item {
 
@@ -49,6 +50,7 @@ public class Item {
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
+
     @JsonProperty("external_urls")
     public ExternalUrls getExternalUrls() {
         return externalUrls;
@@ -58,6 +60,7 @@ public class Item {
     public void setExternalUrls(ExternalUrls externalUrls) {
         this.externalUrls = externalUrls;
     }
+
 
     @JsonProperty("followers")
     public Followers getFollowers() {
